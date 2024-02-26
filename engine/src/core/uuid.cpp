@@ -14,7 +14,7 @@ namespace {
 namespace Elder {
 
     UUID::UUID() : mID(sDistribution(sRandomEngine)) {
-#if ELDER_DEBUG_ID_CREATION
+#if EE_DEBUG_ID_CREATION
         EE_CORE_DEBUG("New UUID: {0}", mID);
 #endif
     }

@@ -1,16 +1,19 @@
 #include "elder/elder.hpp"
 
-class TestApp : public Elder::Application {
+using namespace Elder;
+
+class TestLayer : public Layer {
   public:
 
-    void OnUpdate() override;
+    TestLayer(bool tIsOverlay) : Layer(tIsOverlay) { }
+
+    void OnUpdate() override { EE_CLIENT_INFO("From Layer Update."); }
 };
 
-void TestApp::OnUpdate() {
-    EE_CLIENT_INFO("OnUpdate");
-    mIsRunning = false;
-}
+class TestApp : public Application {
+  public:
 
-Elder::Unique<Elder::Application> CreateApp(int argc, char** argv) {
-    return std::make_unique<TestApp>();
-}
+    TestApp() : Application() { PushLayer(new TestLayer(false)); }
+};
+
+Unique<Application> CreateApp(int argc, char** argv) { return std::make_unique<TestApp>(); }

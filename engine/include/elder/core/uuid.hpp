@@ -8,10 +8,13 @@ namespace Elder {
       public:
 
         UUID();
-        UUID(UUID&&)      = default;
-        UUID(const UUID&) = delete;
+        UUID(UUID&&)                 = default;
 
-        operator uint64_t() const noexcept { return mID; }
+        UUID(const UUID&)            = delete;
+        UUID& operator=(UUID&&)      = delete;
+        UUID& operator=(const UUID&) = delete;
+
+        operator unsigned long() const noexcept { return mID; }
 
       private:
 

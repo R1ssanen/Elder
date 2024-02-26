@@ -18,10 +18,8 @@ namespace Elder {
     Shared<spdlog::logger> GetClientLogger() noexcept { return sClientLogger; }
 
     void                   InitLog(const LogLevel& tLogLevel) {
-        spdlog::set_pattern("%^[%n/%L]%$ %v (%T)");
-
-        sCoreLogger->set_level(static_cast<spdlog::level::level_enum>(tLogLevel));
-        sClientLogger->set_level(static_cast<spdlog::level::level_enum>(tLogLevel));
+        spdlog::set_pattern("[%T] %^[%n] -> %v%$");
+        spdlog::set_level(static_cast<spdlog::level::level_enum>(tLogLevel));
     }
 
 } // namespace Elder

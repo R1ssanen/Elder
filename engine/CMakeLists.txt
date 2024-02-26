@@ -5,6 +5,9 @@ add_library(${PROJECT_NAME} SHARED
 	src/core/log.cpp
 	src/core/application.cpp
 	src/core/uuid.cpp
+	src/core/timer.cpp
+	src/core/layer.cpp
+	src/core/layer_stack.cpp
 )
 
 target_precompile_headers(${PROJECT_NAME} PUBLIC "include/elder/eepch.hpp")

@@ -17,10 +17,12 @@
 #error Elder Engine currenly supports Linux only.
 #endif
 
-#define ELDER_DEBUG_ALL         false
-#define ELDER_DEBUG_ID_CREATION (false || ELDER_DEBUG_ALL)
-#define ELDER_DEBUG_CTOR        (false || ELDER_DEBUG_ALL)
-#define ELDER_DEBUG_DTOR        (false || ELDER_DEBUG_ALL)
+#define EE_DEBUG_ALL         false
+#define EE_DEBUG_ID_CREATION (false || EE_DEBUG_ALL)
+#define EE_DEBUG_CTOR        (true || EE_DEBUG_ALL)
+#define EE_DEBUG_DTOR        (true || EE_DEBUG_ALL)
+#define EE_DEBUG_LAYER_PUSH  (true || EE_DEBUG_ALL)
+#define EE_DEBUG_LAYER_POP   (true || EE_DEBUG_ALL)
 
 namespace Elder {
 
